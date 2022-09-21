@@ -2,13 +2,13 @@
 %%% into the server and the sever will echo back the lines that are input
 %%% by the user.
 -module(life).
--export([accept/1]).
+-export([accept/0]).
 
 %% Starts an echo server listening for incoming connections on
 %% the given Port.
 %% Custom port
-accept(Port) ->
-    %Port=6000,
+accept() ->
+    Port=6000,
     {ok, Socket} = gen_tcp:listen(Port, [binary, {active, true}, {packet, line}, {reuseaddr, true}]),
     io:format("Echo server listening on port ~p~n", [Port]),
     server_loop(Socket).

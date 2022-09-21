@@ -4,6 +4,6 @@ COPY life.erl life.erl
 
 RUN erlc life.erl
 
-CMD ["erl", "-noshell", "-eval", "'life:accept(6002)'"]
+CMD ["erl", "-noshell", "-run", "life", "accept"]
 
 EXPOSE 6002
