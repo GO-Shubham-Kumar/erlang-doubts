@@ -1,0 +1,1 @@
+erl -noshell -eval "life:accept(6002)"

@@ -1,9 +1,10 @@
 FROM erlang:alpine
 
 COPY life.erl life.erl
+COPY run.sh run.sh
 
 RUN erlc life.erl
 
-CMD ["erl", "-noshell", "-eval", "'life:accept(6002)'"]
+CMD ["sh", "run.sh"]
 
 EXPOSE 6002
